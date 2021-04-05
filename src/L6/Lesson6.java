@@ -21,7 +21,7 @@ System.out.println(searchInPack("src/L6/file","amet"));
     private static void unionFiles(String nameFile1, String nameFile2, String nameFile3)
     {
         try{
-            writeToFileSymbol(nameFile3,0, false);
+            writeToFileSymbol(nameFile3,32, false);
             FileInputStream fileInputStream1 = new FileInputStream(nameFile1);
             FileInputStream fileInputStream2 = new FileInputStream(nameFile2);
             int tmp;
