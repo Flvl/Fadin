@@ -52,190 +52,19 @@ public class Lesson1 {
 }
 
 
-interface Participant {
-    void info();
-    void start(RunTrack runTrack);
-    void start(Wall wall);
-    boolean finish(RunTrack runTrack);
-    boolean finish(Wall wall);
-
-}
-
-interface Let {
-    void info();
-}
-
- class Human implements  Participant {
-
-    private String name;
-    private int maxDistance;
-    private float maxHeight;
-
-    public Human(String name, int maxDistance, float maxHeight) {
-        this.name = name;
-        this.maxDistance=maxDistance;
-        this.maxHeight=maxHeight;
-
-    }
-
-     public void start(RunTrack runTrack){
-         System.out.println("Участник с именем "+name+" бежит...");
-         if (runTrack.overcome(maxDistance)) System.out.print( "пробежал ");
-         else System.out.print( "и не пробежал ");
-         System.out.println(runTrack.getLength()+" м");
-     }
-     public void start(Wall wall){
-         System.out.println("Участник с именем "+name+" прыгает...");
-         if (wall.overcome(maxHeight)) System.out.print( "перепрыгнул ");
-         else System.out.print( "и не перепрыгнул");
-         System.out.println(wall.getHeight()+" м");
-     }
-
-     public boolean finish (RunTrack runTrack){
-         if (runTrack.overcome(maxDistance))  return true;
-         else return false;
-     }
-     public boolean finish(Wall wall){
-         if (wall.overcome(maxHeight))  return true;
-         else  return false;
-     }
-
-    public void info() {
-        System.out.println("Человек по имени " + name+" может пробежать "+maxDistance+" м и прыгнуть на высоту "+maxHeight+" м");
-    }
-}
-
-class Cat implements  Participant {
-
-    private String name;
-    private int maxDistance;
-    private float maxHeight;
-
-
-    public Cat(String name, int maxDistance, float maxHeight) {
-        this.name = name;
-        this.maxDistance=maxDistance;
-        this.maxHeight=maxHeight;
-    }
-
-    public void info() {
-        System.out.println("Кот по кличке " + name+" может пробежать "+maxDistance+" м и прыгнуть на высоту "+maxHeight+" м");
-    }
-
-    public void start(RunTrack runTrack){
-        System.out.println("Участник по кличке "+name+" бежит...");
-        if (runTrack.overcome(maxDistance)) System.out.print( "пробежал ");
-        else System.out.print( "и не пробежал ");
-        System.out.println(runTrack.getLength()+" м");
-    }
-
-
-    public void start(Wall wall){
-        System.out.println("Участник по кличке "+name+" прыгает...");
-        if (wall.overcome(maxHeight)) System.out.print( "перепрыгнул ");
-        else System.out.print( "и не перепрыгнул ");
-        System.out.println(wall.getHeight()+" м");
-    }
-
-    public boolean finish (RunTrack runTrack){
-        if (runTrack.overcome(maxDistance))  return true;
-        else return false;
-    }
-    public boolean finish(Wall wall){
-        if (wall.overcome(maxHeight))  return true;
-        else  return false;
-    }
-}
-
-class Robot implements  Participant {
-
-    private String name;
-    private int maxDistance;
-    private float maxHeight;
-
-
-    public Robot(String name, int maxDistance, float maxHeight) {
-        this.name = name;
-        this.maxDistance=maxDistance;
-        this.maxHeight=maxHeight;
-    }
-
-    public void info() {
-        System.out.println("Робот с номером " + name+" может пробежать "+maxDistance+" м и прыгнуть на высоту "+maxHeight+" м");
-    }
-
-    public void start(RunTrack runTrack){
-        System.out.println("Участник под номером "+name+" бежит...");
-        if (runTrack.overcome(maxDistance)) System.out.print( "пробежал ");
-        else System.out.print( "и не пробежал ");
-        System.out.println(runTrack.getLength()+" м");
-    }
 
 
 
-    public void start(Wall wall){
-        System.out.println("Участник под номером "+name+" прыгает...");
-        if (wall.overcome(maxHeight)) System.out.print( "перепрыгнул ");
-        else System.out.print( "и не перепрыгнул ");
-        System.out.println(wall.getHeight()+" м");
-    }
-
-    public boolean finish (RunTrack runTrack){
-        if (runTrack.overcome(maxDistance))  return true;
-        else return false;
-    }
-    public boolean finish(Wall wall){
-        if (wall.overcome(maxHeight))  return true;
-        else  return false;
-    }
-}
-
-class RunTrack implements Let {
-
-    private int length;
-
-    public RunTrack(int length) {
-        this.length = length;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void info() {
-        System.out.println("Длина беговой дорожки: " + length+" м");
-    }
-
-    public boolean overcome(int distance)
-    {
-        if (distance<length) return false;
-        else return true;
-    }
-}
-
-class Wall implements Let{
-
-    private float height;
-
-    public Wall(float height) {
-        this.height = height;
-    }
 
 
-    public float getHeight() {
-        return height;
-    }
 
-    public void info() {
-        System.out.println("Высота стены: " + height+" м");
-    }
 
-    public boolean overcome(float distance)
-    {
-        if (distance<height) return false;
-        else return true;
-    }
-}
+
+
+
+
+
+
 
 
 
